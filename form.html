@@ -1,0 +1,377 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+<script>
+if (screen.width <= 700) {
+window.location = "http://m.sideserfcakes.com/form.html";
+}</script>
+<link rel="stylesheet" href="jquery-ui-1.10.2.custom/css/pepper-grinder/jquery-ui-1.10.2.custom.css" />
+<link rel="stylesheet" href="jquery-ui-1.10.2.custom/css/pepper-grinder/jquery-ui-1.10.2.custom.min.css" />
+<link rel="shortcut icon" href="images/logo.ico">
+<script src="jquery-ui-1.10.2.custom/js/jquery-1.9.1.js"></script>
+<script src="jquery-ui-1.10.2.custom/js/jquery-ui-1.10.2.custom.js"></script>
+<script src="jquery-ui-1.10.2.custom/js/jquery-ui-1.10.2.custom.min.js"></script>
+<script src='https://www.google.com/recaptcha/api.js'></script>
+<style>
+@font-face {
+	font-family:BebasNeue;
+	src: url('font/BebasNeue.eot'); /* IE9 Compat Modes */
+	src: url('font/BebasNeue.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+	url('font/BebasNeue.woff') format('woff'), /* Modern Browsers */
+	url('font/BebasNeue.ttf')  format('truetype'), /* Safari, Android, iOS */
+	url('font/BebasNeue.svg#svgFontName') format('svg'); /* Legacy iOS */
+}
+
+body {
+	background-attachment: fixed;
+	background: #ffffff; /* Old browsers */
+	background: -moz-linear-gradient(top,  #ffffff 56%, #c4c4c4 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(56%,#ffffff), color-stop(100%,#c4c4c4)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #ffffff 56%,#c4c4c4 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #ffffff 56%,#c4c4c4 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #ffffff 56%,#c4c4c4 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  #ffffff 56%,#c4c4c4 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#c4c4c4',GradientType=0 ); /* IE6-9 */
+}
+
+#spacerA {
+	height:90px;
+	left: 0;
+	right: 0;
+	top: 0;
+	width:100%;
+	position:fixed;
+	background-color: #E6E6E6;
+	border-bottom-width:2px;
+	border-bottom-color:black;
+	border-bottom-style: solid;
+}
+
+#spacerB {
+	overflow:hidden;
+	height:100px;
+	width:100%;
+}
+
+.radius{
+	border-radius: 15px;
+}
+
+h1 {
+	letter-spacing:5px;
+	font-size:40px;
+	font-color:#404040;
+	right:5%;
+	position:fixed;
+	text-align:text-bottom;
+	font-family:'BebasNeue';
+	background: -webkit-linear-gradient(#404040, #696969);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
+h3 {
+	letter-spacing:3px;
+	font-size:36px;
+	font-color:#404040;
+	left:5%;
+	position:fixed;
+	text-align:text-bottom;
+	font-family:'BebasNeue';
+}
+
+.fieldset
+{
+	background-color: #4B4B4B;
+	border-radius: 20px;
+	border: 0px;
+	width: 550px;
+}
+
+.legend
+{
+	font-style:bold;
+	font-size:.025em;
+}
+
+p
+{
+	color:#000;
+	text-align:left;
+	font-family:'Arial';
+}
+
+hr.style-eight 
+{
+	height: 0;
+	border: 1px inset #E6E6E6;
+	margin: 25px;
+} 
+
+td {
+	color:#fff;
+	font-family:sans-serif;
+	font-size:14px;
+}
+	
+</style>
+</head>
+<body>
+	<div id="spacerA">
+		<h3><script>document.write(new Date().toLocaleDateString());</script></div></h3>
+		<h1>Request a Quote</h1>
+	</div>
+	
+	<div id="spacerB"></div>
+
+<center>
+
+<form name="order" action="process.php" onsubmit="return validateForm()" method="post">
+<span style="font-weight:bold;color:#000;font-family:sans-serif;font-size:12px;">(*) indicates a required field</span><br /><br />
+
+<fieldset class="fieldset" border="0">
+<table border = "0" width="60%">
+<br />
+	<tr>
+		<td><b>First Name</b> <font color="red">*</font></td>
+		<td><b>Last Name</b> <font color="red">*</font></td>
+	</tr>
+	<tr>
+		<td><input name="FNAME" type="text" size="35"/></td>
+		<td><input name="LNAME" type="text" size="35"/></td>
+	</tr>
+	<tr>
+		<td>&nbsp;</td>
+	</tr>
+	<tr>
+		<td><b>Phone</b> <font color="red">*</font></td>
+		<td><b>E-Mail</b> <font color="red">*</font></td> 
+	</tr>
+	<tr>
+		<td><input name="PHONE" type="tel" size="35"/></td>
+		<td><input name="EMAIL" type="email" size="35"/></td>
+	</tr>
+</table>
+<hr class="style-eight">
+<table border = "0" width="60%">
+	<tr>
+		<td><b>Event Address</b></td>
+		<td><b>Address 2</b> </td>
+	</tr>
+	<tr>
+		<td><input name="ADDRESS_1" type="text" size="35"/></td>
+		<td><input name="ADDRESS_2" type="text" size="35"/></td>
+	</tr>
+		<tr>
+		<td>&nbsp;</td>
+	</tr>
+	<tr>
+		<td><b>City</b> <font color="red">*</font></td>
+		<td><b>State</b> <font color="red">*</font>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<b>Zip</b></td>
+	</tr>
+	<tr>
+		<td><input name="CITY" type="text" size="35"/></td>
+		<td><select name="STATE">
+			<option selected=" "></option>
+			<option value="AK">AK</option>
+			<option value="AL">AL</option>
+			<option value="AR">AR</option>
+			<option value="AZ">AZ</option>
+			<option value="CA">CA</option>
+			<option value="CO">CO</option>
+			<option value="CT">CT</option>
+			<option value="DC">DC</option>
+			<option value="DE">DE</option>
+			<option value="FL">FL</option>
+			<option value="GA">GA</option>
+			<option value="HI">HI</option>
+			<option value="IA">IA</option>
+			<option value="ID">ID</option>
+			<option value="IL">IL</option>
+			<option value="IN">IN</option>
+			<option value="KS">KS</option>
+			<option value="KY">KY</option>
+			<option value="LA">LA</option>
+			<option value="MA">MA</option>
+			<option value="MD">MD</option>
+			<option value="ME">ME</option>
+			<option value="MI">MI</option>
+			<option value="MN">MN</option>
+			<option value="MO">MO</option>
+			<option value="MS">MS</option>
+			<option value="MT">MT</option>
+			<option value="NC">NC</option>
+			<option value="ND">ND</option>
+			<option value="NE">NE</option>
+			<option value="NH">NH</option>
+			<option value="NJ">NJ</option>
+			<option value="NM">NM</option>
+			<option value="NV">NV</option>
+			<option value="NY">NY</option>
+			<option value="OH">OH</option>
+			<option value="OK">OK</option>
+			<option value="OR">OR</option>
+			<option value="PA">PA</option>
+			<option value="RI">RI</option>
+			<option value="SC">SC</option>
+			<option value="SD">SD</option>
+			<option value="TN">TN</option>
+			<option value="TX">TX</option>
+			<option value="UT">UT</option>
+			<option value="VA">VA</option>
+			<option value="VT">VT</option>
+			<option value="WA">WA</option>
+			<option value="WI">WI</option>
+			<option value="WV">WV</option>
+			<option value="WY">WY</option>
+			</select>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<input name="ZIP" type="text" /></td>
+	</tr>
+		<tr>
+		<td>&nbsp;</td>
+	</tr>
+	<tr>
+		<td><b>Date of Event</b></td>
+		<td><b>Time</b></td>
+	</tr>
+	<tr>
+		<td><input name="EVENT_DATE" type="text" id="datepicker" size="35"/></td>
+		<td><input name="TIME" type="time" size="35"/></td>
+	</tr>
+</table>
+
+<hr class="style-eight">
+<table border="0" width="90%">
+	<tr>
+		<td align="left"><b>Pickup/Delivery</b> <font color="red">*</font></td>
+		<td align="right"><b>Estimate Number of Servings</b> <font color="red">*</font></td>
+	</tr>
+	<tr>
+		<td align="left"><select name="PU_DEL">
+			<option selected=" "></option>
+			<option value="Pickup">Pickup</option>
+			<option value="Delivery">Delivery</option>
+			</select></td>
+		<td align="right"><input name="NO_GUESTS" type="number" size="5"/></td>
+	</tr>
+	<tr>
+		<td><br /><br /></td>
+	</tr>
+
+	<tr>
+		<td align="center"><b>Additional Details</b></td>
+	</tr>
+</table>
+<table width="60%">
+	<tr>
+		<td><b><textarea name="ADD_DETAIL" rows="6" cols="50"></textarea></b></td>
+	</tr>
+</table><br />
+<div class="g-recaptcha" data-sitekey="6LecYukSAAAAAJevE6FiN7Hyywrpl1VqCzwjXpXE"></div>
+<br />
+
+</fieldset>
+<br />
+
+<input type="submit" value="Submit" style="width:15em;height:3em;">
+
+</center>
+</form>
+<br />
+</body>
+
+<script>
+function validateForm()
+	{
+		var a=document.forms["order"]["FNAME"].value;
+		var b=document.forms["order"]["LNAME"].value;
+		var c=document.forms["order"]["PHONE"].value;
+		var d=document.forms["order"]["EMAIL"].value;
+		var e=document.forms["order"]["NO_GUESTS"].value;
+		var f=document.forms["order"]["CITY"].value;
+		var g=document.forms["order"]["STATE"].value;
+		var h=document.forms["order"]["PU_DEL"].value;
+		var atpos=d.indexOf("@");
+		var dotpos=d.lastIndexOf(".");
+		
+		if (a==null || a=="")
+			{
+				alert("First Name is Required");
+				return false;
+			}
+		
+		if (b==null || b=="")
+			{
+				alert("Last Name is Required");
+				return false;
+			}
+		
+		if (c==null || c=="")
+			{
+				alert("Phone Number is Required");
+				return false;
+			}
+			
+		if (d==null || d=="")
+			{
+				alert("E-Mail Address is Required");
+				return false;
+			}
+
+		if (e==null || e=="")
+			{
+				alert("Number of Guests is Required");
+				return false;
+			}
+
+		if (e < 30)
+			{
+				alert("Sorry, minimum number of servings for Cakes is 30");
+				return false;
+			}
+
+		if (f==null || f=="")
+			{
+				alert("City is Required");
+				return false;
+			}
+
+		if (g==null || g=="")
+			{
+				alert("State is Required");
+				return false;
+			}
+
+		if (h==null || h=="")
+			{
+				alert("Pickup/Delivery is Required");
+				return false;
+			}
+
+		if (h=="Delivery" && g!="TX")
+			{
+				alert("Sorry, your location is out of our delivery area");
+				return false;
+			}
+			
+		if  (atpos<1 || dotpos<atpos+2 || dotpos+2>=d.length)
+			{
+				alert("E-Mail Address is invalid. Please Check.")
+				return false;
+			}
+			
+	}
+
+$(function() {
+$( "#datepicker" ).datepicker();
+});
+
+function OpenURL()
+	{
+		location.href = "index.html";
+	}
+</script>
+</html>
